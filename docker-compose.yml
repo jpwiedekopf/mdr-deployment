@@ -12,8 +12,7 @@ services:
       - "mdr-db-data-keycloak:/var/lib/postgresql/data"
 
   mdr:
-    #image: "docker.verbis.dkfz.de/ccp/mdr-rest:release-gba-mdr"
-    image: mdr-rest
+    image: mdr-rest-uzl
     build: mdr-rest
     networks:
       - "mdr-db-keycloak"
@@ -35,8 +34,7 @@ services:
       - "mdr-db"
 
   mdr-ui:
-    #image: docker.verbis.dkfz.de/ccp/mdr:release-gba-mdr
-    image: mdr-ui
+    image: mdr-ui-uzl
     build: mdr-ui
     networks:
       - "mdr-db-keycloak"

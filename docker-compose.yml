@@ -2,6 +2,7 @@ version: '3.4'
 services:
   mdr-db:
     image: "postgres:9.6"
+    container_name: mdr-db
     environment:
       POSTGRES_USER: "mdr"
       POSTGRES_PASSWORD: "mdr"

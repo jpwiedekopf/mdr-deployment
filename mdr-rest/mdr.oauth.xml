@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:oAuth2Client xmlns:p="http://schema.samply.de/config/OAuth2Client"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xsi:schemaLocation="http://schema.samply.de/config/OAuth2Client http://schema.samply.de/config/OAuth2Client.xsd">
+<p:host>{auth-host}</p:host>
+<p:hostPublicKey>
+    {auth-public-key}
+</p:hostPublicKey>
+<p:clientId>{auth-client-id}</p:clientId>
+<p:clientSecret>{auth-client-secret}</p:clientSecret>
+<p:useSamplyAuth>false</p:useSamplyAuth>
+<p:realm>{auth-realm}</p:realm>
+</p:oAuth2Client>
+

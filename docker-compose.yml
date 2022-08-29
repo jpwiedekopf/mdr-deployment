@@ -7,16 +7,16 @@ services:
       POSTGRES_PASSWORD: "mdr"
       POSTGRES_DB: "mdr_db"
     networks:
-      - "mdr-db"
+      - "mdr-db-keycloak"
     volumes:
-      - "mdr-db-data:/var/lib/postgresql/data"
+      - "mdr-db-data-keycloak:/var/lib/postgresql/data"
 
   mdr:
     #image: "docker.verbis.dkfz.de/ccp/mdr-rest:release-gba-mdr"
     image: mdr-rest
     build: mdr-rest
     networks:
-      - "mdr-db"
+      - "mdr-db-keycloak"
     env_file:
       - stack.env
     environment:
@@ -39,7 +39,7 @@ services:
     image: mdr-ui
     build: mdr-ui
     networks:
-      - "mdr-db"
+      - "mdr-db-keycloak"
     env_file:
       - stack.env
     environment:
@@ -57,10 +57,10 @@ services:
       - "mdr-db"
 
 networks:
-  mdr-db:
+  mdr-db-keycloak:
     driver: "bridge"
 
 volumes:
-  mdr-db-data:
-     name: "mdr-db-data"
+  mdr-db-data-keycloak:
+     name: "mdr-db-data-keycloak"
 
